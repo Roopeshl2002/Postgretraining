@@ -1,0 +1,8 @@
+CREATE TABLE sample_Table (
+	id serial PRIMARY KEY,
+    title TEXT,  description text,
+    createddate timestamp default current_timestamp,
+    createdby text,
+    modifieddate timestamp,
+    modifiedby text
+);
