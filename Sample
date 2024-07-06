@@ -5,3 +5,4 @@ CREATE TABLE orders (
     total_amount NUMERIC
 ) partition by hash(order_id);
 
+
