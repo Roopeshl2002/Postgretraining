@@ -1,4 +1,64 @@
 --
+-- Table structure for table `customers`
+--
+
+CREATE TABLE `customers` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `CustomerName` varchar(255) NOT NULL,
+  `BranchID` int(11) NOT NULL,
+  `Address1` varchar(255) DEFAULT NULL,
+  `Address2` varchar(255) DEFAULT NULL,
+  `Address3` varchar(255) DEFAULT NULL,
+  `MobileNo` varchar(50) DEFAULT NULL,
+  `Telephone` varchar(50) DEFAULT NULL,
+  `Country` varchar(100) NOT NULL,
+  `State` varchar(100) NOT NULL,
+  `City` varchar(100) NOT NULL,
+  `PinCode` varchar(50) NOT NULL,
+  `TIN` varchar(100) DEFAULT NULL,
+  `CST` varchar(100) DEFAULT NULL,
+  `OpenBalance` varchar(100) NOT NULL DEFAULT '0',
+  `ClosedBalance` varchar(100) NOT NULL DEFAULT '0',
+  `IsActive` tinyint(1) NOT NULL DEFAULT 1,
+  `IsDelete` tinyint(1) NOT NULL DEFAULT 0,
+  `CreatedAt` timestamp NULL DEFAULT NULL,
+  `UpdatedAt` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employees`
+--
+
+CREATE TABLE `employees` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `EmpCode` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `JoiningDate` timestamp NULL DEFAULT NULL,
+  `Designation` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `FullName` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `BasicPay` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Gender` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `BloodGroup` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `PlaceofBirth` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Nationality` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Address1` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Address2` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `City` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `DOB` timestamp NULL DEFAULT NULL,
+  `ContactNo` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `EmailID` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `EmpImg` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Qualification` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `LastEmployer` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `YearsofExperience` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `IsActive` tinyint(1) NOT NULL DEFAULT 1,
+  `IsDelete` tinyint(1) NOT NULL DEFAULT 0,
+  `CreatedAt` timestamp NULL DEFAULT NULL,
+  `UpdatedAt` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
 -- Table structure for table `bank`
 --
 
@@ -7,7 +67,7 @@ CREATE TABLE `bank` (
   `BankCode` varchar(255) NOT NULL,
   `BankName` varchar(255) NOT NULL,
   `BankDesc` varchar(500) NOT NULL,
-  `IsActive` tinyint(1) NOT NULL DEFAULT 1,
+  `IsActive` tinyint(1) NOT NULL DEFAULT 1,l
   `IsDelete` tinyint(1) NOT NULL DEFAULT 0,
   `CreatedAt` timestamp NULL DEFAULT NULL,
   `UpdatedAt` timestamp NULL DEFAULT NULL
@@ -153,65 +213,6 @@ INSERT INTO `category` (`id`, `CategoryCode`, `CategoryName`, `IsActive`, `IsDel
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `customers`
---
-
-CREATE TABLE `customers` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `CustomerName` varchar(255) NOT NULL,
-  `BranchID` int(11) NOT NULL,
-  `Address1` varchar(255) DEFAULT NULL,
-  `Address2` varchar(255) DEFAULT NULL,
-  `Address3` varchar(255) DEFAULT NULL,
-  `MobileNo` varchar(50) DEFAULT NULL,
-  `Telephone` varchar(50) DEFAULT NULL,
-  `Country` varchar(100) NOT NULL,
-  `State` varchar(100) NOT NULL,
-  `City` varchar(100) NOT NULL,
-  `PinCode` varchar(50) NOT NULL,
-  `TIN` varchar(100) DEFAULT NULL,
-  `CST` varchar(100) DEFAULT NULL,
-  `OpenBalance` varchar(100) NOT NULL DEFAULT '0',
-  `ClosedBalance` varchar(100) NOT NULL DEFAULT '0',
-  `IsActive` tinyint(1) NOT NULL DEFAULT 1,
-  `IsDelete` tinyint(1) NOT NULL DEFAULT 0,
-  `CreatedAt` timestamp NULL DEFAULT NULL,
-  `UpdatedAt` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `employees`
---
-
-CREATE TABLE `employees` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `EmpCode` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `JoiningDate` timestamp NULL DEFAULT NULL,
-  `Designation` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `FullName` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `BasicPay` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Gender` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `BloodGroup` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `PlaceofBirth` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Nationality` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Address1` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Address2` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `City` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `DOB` timestamp NULL DEFAULT NULL,
-  `ContactNo` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `EmailID` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `EmpImg` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Qualification` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `LastEmployer` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `YearsofExperience` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `IsActive` tinyint(1) NOT NULL DEFAULT 1,
-  `IsDelete` tinyint(1) NOT NULL DEFAULT 0,
-  `CreatedAt` timestamp NULL DEFAULT NULL,
-  `UpdatedAt` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
