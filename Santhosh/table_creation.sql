@@ -12,6 +12,6 @@ VALUES
 ('Shop A', 'Location A', '2023-01-01', true),
 ('Shop B', 'Location B', '2023-02-01', true),
 ('Shop C', 'Location C', '2023-03-01', false);
-
+('Shop D', 'Location C', '2023-03-01', false);
 
 -- 
