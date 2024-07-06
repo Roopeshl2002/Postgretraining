@@ -1,0 +1,22 @@
+CREATE TABLE tm_students_details (
+    student_id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    class VARCHAR(50),
+    age INTEGER,
+    gender VARCHAR(10),
+    address TEXT,
+    parent_name VARCHAR(100),
+    contact_number VARCHAR(20)
+);
+ 
+ 
+INSERT INTO  tm_students_details(name, class, age, gender, address, parent_name, contact_number)
+VALUES 
+    ('john', '10th', 15, 'Male', '123 Main St.', 'Jane', '123-456-7890'),
+    ('jade', '9th', 14, 'Female', '456 Elm St.', 'Jack', '234-567-8901');
+ 
+ 
+ 
+SELECT student_id, name, class, age, gender, address, parent_name, contact_number
+FROM tm_students_details
+WHERE class = '10th';
