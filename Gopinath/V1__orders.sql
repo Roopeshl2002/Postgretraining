@@ -1,8 +1,9 @@
-CREATE TABLE orders (
-    order_id SERIAL PRIMARY KEY,
-    order_no int,
-    customer_id INT,
-    delivery_dt timestamp,
-    createdby varchar,
-    createddt timestamp
-) partition by hash(order_id);
+CREATE TABLE public.orders (
+	order_id serial4 NOT NULL,
+	order_no int4 NULL,
+	customer_id varchar NULL,
+	delivery_dt timestamp NULL,
+	createdby varchar NULL,
+	createddt timestamp NULL,
+	CONSTRAINT orders_pkey PRIMARY KEY (order_id)
+)
